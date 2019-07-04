@@ -46,6 +46,15 @@ class AppFixtures extends Fixture
 
         $manager->persist($address);
         $this->setReference('address-4', $address);
+
+        $address = new Address();
+        $address->setStreet("17 de la porte");
+        $address->setCp("1986");
+        $address->setCity("NEW YORK");
+        $address->setCountry("USA");
+
+        $manager->persist($address);
+        $this->setReference('address-3', $address);
         $manager->flush();
     }
 }
