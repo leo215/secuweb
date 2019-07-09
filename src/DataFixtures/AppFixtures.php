@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 
+use App\Entity\Administrator;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\Address;
@@ -56,5 +57,25 @@ class AppFixtures extends Fixture
         $manager->persist($address);
         $this->setReference('address-3', $address);
         $manager->flush();
+
+        $administrator = new Administrator();
+        $administrator -> setFirstName('Gnugnu');
+        $administrator ->setLastName('Da Costa');
+        $administrator ->setMails ('dacosta@gmail.com');
+
+        $manager->persist($administrator);
+        $this->setReference('administrator-1' , $administrator);
+
+        $administrator = new Administrator();
+        $administrator -> setFirstName('Pierre');
+        $administrator ->setLastName('Du jardin');
+        $administrator ->setMails ('Pierrdujardinta@gmail.com');
+
+        $manager->persist($administrator);
+        $this->setReference('administrator-2' , $administrator);
+        $manager->flush();
+
+
+
     }
 }

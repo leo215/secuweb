@@ -12,9 +12,11 @@ use  App\Entity\Mail;
 class Administrator
 {
     /**
-     * @ORM\Id()
+     * Identifiant autoincrémenté
+     * @ORM\Id
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue()
-     * @ORM\Column(type="string")
+     * @var int
      */
     private $id;
 
